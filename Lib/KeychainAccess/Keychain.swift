@@ -673,7 +673,7 @@ public final class Keychain {
             } else {
                 query[UseAuthenticationUI] = UseAuthenticationUIFail
             }
-        } else {
+        } else if #available(iOS 8.0, *) {
             query[UseNoAuthenticationUI] = kCFBooleanTrue
         }
         #elseif os(macOS)
@@ -841,7 +841,7 @@ public final class Keychain {
                 } else {
                     query[UseAuthenticationUI] = UseAuthenticationUIFail
                 }
-            } else {
+            } else if #available(iOS 8.0, *) {
                 query[UseNoAuthenticationUI] = kCFBooleanTrue
             }
             #else
@@ -1778,7 +1778,7 @@ extension Accessibility: RawRepresentable, CustomStringConvertible {
             return String(kSecAttrAccessibleAlways)
         #endif
         case .whenPasscodeSetThisDeviceOnly:
-            if #available(macOS 10.10, *) {
+            if #available(iOS 8.0, macOS 10.10, *) {
                 return String(kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly)
             } else {
                 fatalError("'Accessibility.WhenPasscodeSetThisDeviceOnly' is not available on this version of OS.")
