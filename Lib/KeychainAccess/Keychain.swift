@@ -323,7 +323,7 @@ public struct Attributes {
         return attributes[AttributeAccessible] as? String
     }
     public var accessControl: SecAccessControl? {
-        if #available(macOS 10.10, *) {
+        if #available(iOS 8.0, macOS 10.10, *) {
             if let accessControl = attributes[AttributeAccessControl] {
                 return (accessControl as! SecAccessControl)
             }
