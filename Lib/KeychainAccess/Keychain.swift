@@ -1295,6 +1295,7 @@ private let UseAuthenticationUISkip = String(kSecUseAuthenticationUISkip)
 
 #if os(iOS) && !targetEnvironment(macCatalyst)
 /** Credential Key Constants */
+@available(iOS 8.0, macOS 10.10, tvOS 8.0, *)
 private let SharedPassword = String(kSecSharedPassword)
 #endif
 
