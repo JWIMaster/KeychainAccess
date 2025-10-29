@@ -1342,7 +1342,7 @@ extension Options {
             query[AttributeAuthenticationType] = authenticationType.rawValue
         }
 
-        if #available(macOS 10.10, *) {
+        if #available(iOS 8.0, macOS 10.10, *) {
             if authenticationPrompt != nil {
                 query[UseOperationPrompt] = authenticationPrompt
             }
